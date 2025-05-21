@@ -1,0 +1,90 @@
+<!--<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>slides</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='slidespage.css') }}">
+    </head>
+    <body>
+            <a href="/">Home</a>
+            <a href="/sign-up">Sign Up</a>
+            <a href="/login">Login</a>
+            <a href="/logout" id="logout">logout</a>
+        <input type="search" id="searchbar", class="searchbar", onkeyup="searchBar()" placeholder="Type to search for file...", title="Search by course name">
+        <ul id="menu", class="menu">
+            <li><a href="#">cyber security</a></li>
+            <li><a href="#">economics</a></li>
+            <li><a href="#">medicine</a></li>
+            <li><a href="#">biology</a></li>
+            <li><a href="#">chemistry</a></li>
+            <li><a href="#">physics</a></li>
+            <li><a href="#">computer vision</a></li>
+            <li><a href="#">open cv in python</a></li>
+            <li><a href="#">mysql database</a></li>
+        </ul>
+        <script src="{{ url_for("static", filename="script.js") }}"></script>
+    </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slides</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='slidespage.css')}}">
+</head>
+<body>
+<div class="buttonwelcome">
+    <button id="menuToggle">
+      &mdash; <br>
+      &mdash; <br>
+      &mdash;
+    </button>
+    <div class="intro">
+<h2>Diploma CSS Ebooks (2024/2025)</h2>
+</div>
+</div>
+<hr />
+    <div id="sidebar" class="sidebar">
+      <a href="#" class="close-btn" id="closeButton">&times;</a>
+      <div class="sidenav">
+        <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+      </ul>
+      </div>
+    </div>
+
+    <h5>Courses</h5>
+    <ul class="courses">
+    <li><a href="/pop">Principles Of Programming</a></li>
+    <li><a href="/cp">Computer Packages</a></li>
+    <li><a href="/iss">Information Systems</a></li>
+    <li><a href="/ce">Computer Ethics</a></li>
+    <li><a href="/foc">Fundamentals Of Computing</a></li>
+    <li><a href="/french">French</a></li>
+    <li><a href="/aw">Academic Writing</a></li>
+    <li><a href="/calculus">Calculus</a></li>
+    </ul>
+    <div class="footer">
+        <footer>&copy; All Rights Reserved</footer>
+    </div>
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const menuToggle = document.getElementById("menuToggle");
+        const closeBtn = document.getElementById("closeButton");
+        
+        menuToggle.addEventListener("click", () => {
+            sidebar.style.width = "250px";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.style.width = "0";
+        });
+    </script>
+</body>
+</html>

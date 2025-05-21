@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">    
+    <link rel="stylesheet" href="{{ url_for("static", filename="signup.css") }}" />
+    <title>Sign Up</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %} 
+    {% for category, message in messages %} 
+    {% if category == 'error' %}
+    <div class="flash-message flash-error" id="flash-msg">
+      {{ message }}
+    </div>
+    {% elif category == "success" %}
+    <div class="flash-message flash-success" id="flash-msg">
+      {{ message }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+<div class="loginsec">
+        <section>
+            <form method='post'>
+                <h1>Sign Up</h1>
+                <div class="inputbox">
+                    <ion-icon name="email-outline"></ion-icon>
+                    <input type="text" id="indnum" name="indnum" required>
+                    <label for="">Index Number</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password1" name="password1" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password2" name="password2" required>
+                    <label for="">Confirm Password</label>
+                </div>
+
+                <div class="forget">
+                    <a href="https://wa.me/233555442763?text=I%20forgot%20my%20password">Report Issue</a>
+                </div>
+                <button type="submit" id="submit" name="submit">Sign Up</button>
+                <div class="register">
+                    <p>Alredy have an account?<a href="/login"> log in</a></p>
+                </div>
+            </form>
+        </section>
+    </div>
+        <script>
+        const flashMsg = document.getElementById("flash-msg");
+        if (flashMsg) {
+            setTimeout(() => {
+                flashMsg.classList.add("hide");
+            }, 3000);
+        }
+
+        </script>
+
+
+    <!--<form method="post">
+    <label for="indnum">Index Number</label>
+    <input type="text" name="indnum" id="indnum" />
+    <label for="password1">Enter Password</label>
+    <input type="text" name="password1" id="password1" />
+    <label for="password2">Confirm Password</label>
+    <input type="text" name="password2" id="password2" />
+    <div>
+    <button type="submit" id="submit" name="submit">Sign Up</button>
+    </div>
+    </form>-->
+</body>
+</html>

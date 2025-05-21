@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    color: white;
+    background-color: #ffffff;
+    background: linear-gradient(to left, #252525, #28809a);
+
+}
+.scroll {
+    padding-left: 25px;
+    align-items: center;
+    justify-content: center;
+}
+.scroll-container {
+    border-radius: 30px;
+    height: 200px;
+    width: 90%;
+    box-shadow: 0 0 30px rgba(0, 0, 1, 0.9);
+    padding: 0;
+    overflow-x: auto;      /* enables horizontal scrolling */
+    white-space: nowrap;   /* prevents items from wrapping to the next line */
+    border: 1px solid #ccc;
+  }
+
+  .item {
+    display: inline-block; /* items will stay in a row */
+    width: 300px;
+    height: 100%;
+    box-shadow: 0 0 35px rgba(0, 0, 1, 0.9);
+    margin-right: 10px;
+    border-radius: 30px;
+    background: #d3e7e8;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    padding-top: 15px;
+    color: black;
+  }
+  .scroll .scroll-container .item:nth-child(odd) {
+    background-color: #24252a;
+    color: white;
+  }
+  .item .filetitle {
+    width: 100px;
+    padding: 5px;
+    border: 2px solid black;
+  }
+  .item h4 {
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+  .item p {
+    text-align: left;
+    margin-left: 15px;
+    margin-right: 20px;
+  }
+  .item button {
+    width: 45%;
+    font-size: 17px;
+    border-radius: 25px;
+    border: none;
+    background-color: white;
+    margin-top: 15px;
+    padding: 15px;
+
+  }
+#menuToggle {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 10px;
+    text-align: center;
+    line-height: 0.4;
+    border: none;
+    background: transparent;
+
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #252525;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.sidenav {
+    background: transparent;
+}
+.sidenav a {
+    line-height: 3;
+    margin-left: 30px;
+    width: 100%;
+    padding: 0;
+}
+.sidenav ul li {
+    margin: 0;
+    border: none;
+    display: flex;
+}
+.sidenav ul li a {
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+.sidenav ul li:nth-child(4n+1) {
+    background-color: #252525;
+    background: linear-gradient(to right, #252525, #28809a);
+    width: 100%;
+}
+.sidebar a:hover {
+    font-size: larger;
+    background: linear-gradient(to right, #252525, #28809a);}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    font-size: 30px;
+    margin-left: 25px;
+}
+        .flash-message {
+            width: 100%;
+            height: 0;
+            top: 0;
+            overflow-y: hidden;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            position: fixed;
+            z-index: 1000;
+            transition: 1s;
+        }
+        .flash-success {
+            /*background-color: #4CAF50;*/
+            background-color: green;
+            border: 5px solid green;
+            height: 50px;
+        }
+        .flash-error {
+            background-color: red;
+            border: 5px solid red;
+            height: 50px;
+        }
+        .hide {
+            opacity: 0;
+        }
+.buttonwelcome {
+    align-items: center;
+    font-size: 10px;
+    display: flex;
+    padding: 0;
+    margin-left: 10px;
+}
+.buttonwelcome h2 {
+    margin-left: 0;
+    font-weight: bold;
+}
+.buttonwelcome .intro {
+    align-items: center;
+    justify-content: center;
+}
+.greeting {
+    padding: 10px;
+    margin: none;
+}
+.greeting h4 {
+    font-size: 20px;
+}
+.recent {
+    padding: 10px;
+}
+.recent h5 {
+    font-size: 20px;
+}
+.cat {
+    padding: 10px;
+}
+.cat h5 {
+    font-size: 20px;
+}
+.firstdiv {
+    border-radius: 30px;
+    height: 200px;
+    width: 85%;
+    padding: 0;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border: none;
+}
+.firstdiv .items a .catbutton {
+    padding: 0;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    width: 100%;
+    margin: 5px;
+    height: 50px;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+.firstdiv .items a {
+    text-decoration: none;
+}
+.firstdiv .items a .catbutton p {
+    font-size: 17px;
+    text-align: left;
+    position: relative;
+    margin-left: 20px;
+    margin-right: 20px;
+    color: black;
+}
+#slidesbtn {
+    background-color: #d3e7e8;
+}
+#assbtn {
+    background-color: #d7cffe;
+}
+#timebtn {
+    background-color: #fdecba;
+}
+footer {
+    background-color: #24252a;
+    display: flexbox;
+    width: 100%;
+    margin-top: 70px;
+    margin-left: -10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 60px;
+    padding-top: 20px;
+    color: #ffffff;
+    bottom: 0;
+    position: fixed;
+}

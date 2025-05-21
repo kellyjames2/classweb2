@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Home{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='homepage.css') }}">
+  </head>
+  <body>
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %} 
+    {% for category, message in messages %} 
+    {% if category == 'error' %}
+    <div class="flash-message flash-error" id="flash-msg">
+      {{ message }}
+    </div>
+    {% elif category == 'success' %}
+    <div class="flash-message flash-success" id="flash-msg">
+      {{ message }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+<div class="buttonwelcome">
+    <button id="menuToggle">
+      &mdash; <br>
+      &mdash; <br>
+      &mdash;
+    </button>
+    <div class="intro">
+<h2>Diploma CSS Ebooks (2024/2025)</h2>
+</div>
+</div>
+<hr />
+    <div id="sidebar" class="sidebar">
+      <a href="#" class="close-btn" id="closeButton">&times;</a>
+      <div class="sidenav">
+        <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+      </ul>
+      </div>
+    </div>
+
+    <!--<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" id="home" href="/">Home</a>
+          <a class="nav-item nav-link" id="logout" href="/login">Logout</a>-->
+          <!--<a class="nav-item nav-link" id="login" href="/login">Login</a>-->
+          <!--<a class="nav-item nav-link" id="signUp" href="https://wa.me/233555442763?text=I%20need%20help">Contact Us</a>
+        </div>
+      </div>
+    </nav>-->
+    <!--<div class="searchbar1">
+        <a href="/search"><input type="text", placeholder="Search...", class="searchbar"></a>
+    </div>-->
+    <div class="greeting">
+      <h4>
+      {{ greeting }}, {{ student_name }}
+      </h4>
+    </div>
+    <div class="recent">
+    <h5>Recently Uploaded</h5>
+    </div>
+    <div class="scroll">
+  <div class="scroll-container">
+    {% for course, des in courses %}
+    <div class="item">
+      <h4><b>{{ course }}</b></h4>
+      <p><b>Topic:</b>{{ des }}</p>
+      <div class="actionbtn">
+      <a href="{{ url_for('download_file', filename='Screenshot (7).png', pathoffolder='recentup') }}"><button>Download</button></a>
+      <a href="{{ url_for('view_file', filename='Screenshot (7).png', pathoffolder='recentup') }}"><button>View</button></a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+    </div>
+      <div class="cat">
+    <h5>Categories</h5>
+    </div>
+    <div class="firstdiv">
+        <div class="items">
+            <a href="/slides">
+              <button class="catbutton" id="slidesbtn">
+                <p class="title">Slides</p>
+                <p>&DoubleRightArrow;</p>
+              </button>
+            </a>
+        </div>
+        <div class="items">
+            <a href="#">
+              <button class="catbutton" id="assbtn">
+                <p class="title">Assignments</p>
+                <p>&DoubleRightArrow;</p>
+              </button>
+            </a>
+        </div>
+        <div class="items">
+            <a href="#">
+              <button class="catbutton" id="timebtn">
+                <p class="title">Timetable</p>
+                <p>&DoubleRightArrow;</p>
+              </button>
+            </a>
+        </div>
+    </div>
+        <div class="footer">
+    <footer>&copy; All Rights Reserved</footer>
+    </div>
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const menuToggle = document.getElementById("menuToggle");
+        const closeBtn = document.getElementById("closeButton");
+        
+        menuToggle.addEventListener("click", () => {
+            sidebar.style.width = "250px";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.style.width = "0";
+        });
+        const flashMsg = document.getElementById("flash-msg");
+        if (flashMsg) {
+            setTimeout(() => {
+                flashMsg.classList.add("hide");
+            }, 3000);
+        }
+    </script>
+  </body>
+  </html>

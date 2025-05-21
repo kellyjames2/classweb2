@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Input in List</title>
+    <style>
+        #result {
+            font-weight: bold;
+            color: green;
+        }
+        #result.not-found {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Check if Input Exists in List</h2>
+    
+    <!-- Input field and button to check the list -->
+    <label for="input">Enter Value:</label>
+    <input type="text" id="input" name="input">
+    <button onclick="checkInput()">Check</button>
+
+    <!-- Result will be displayed here -->
+    <p id="result"></p>
+
+    <script>
+        // Example list of values
+        const list = ['Alice', 'Bob', 'Charlie', 'David'];
+
+        // Function to check if the input exists in the list
+        function checkInput() {
+            const input = document.getElementById('input').value.trim(); // Get the input value and remove extra spaces
+            const resultElement = document.getElementById('result');
+            
+            // Check if the input is in the list
+            if (list.includes(input)) {
+                resultElement.textContent = `The input "${input}" exists in the list.`;
+                resultElement.classList.remove('not-found');
+            } else {
+                resultElement.textContent = `The input "${input}" does not exist in the list.`;
+                resultElement.classList.add('not-found');
+            }
+        }
+    </script>
+
+</body>
+</html>

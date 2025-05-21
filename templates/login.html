@@ -1,0 +1,90 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"/>
+        <title>Login</title>
+    </head>
+    <body>
+        <section>
+            <form method="post">
+        <div class="inputbox", content="width: device-width; initial-scale: 1.0">-->
+            <!--<img src="profilepic.png" alt="">-->
+            <!--<label for-"">Index Number</label>
+            <input type="text" id="indnum", name="indnum", placeholder="Enter your index number here..." required>
+            <label for="">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
+            <a href="/"><button type="submit", id="submit", onclick="checkInput()"> Submit </button></a>
+            <marquee behavior="" direction="left">You can enter in either small case or caps</marquee>-->
+            <!--<P id="hidden">* Tbis Index Number is not recognized in the class</P> -->
+            <!--<div>
+                <a href="/">Home</a>
+                <a href="/sign-up">Sign Up</a>
+                <a href="/login">Login</a>
+                <a href="/logout" id="logout">logout</a>
+            </div>
+        </div>
+            </form>
+        </section>
+        <script src="/static/script.js"></script>
+    </body>
+</html>-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}"/>
+        <title>Login</title>
+    </head>
+    <body>
+    <div>
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+    {% if messages %} 
+    {% for category, message in messages %} 
+    {% if category == 'error' %}
+    <div class="flash-message flash-error" id="flash-msg">
+      {{ message }}
+    </div>
+    {% elif category == 'success' %}
+    <div class="flash-message flash-success" id="flash-msg">
+      {{ message }}
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+    <div class="loginsec">
+        <section>
+            <form method='post'>
+                <h1>Login</h1>
+                <div class="inputbox">
+                    <ion-icon name="email-outline"></ion-icon>
+                    <input type="text" id="indnum" name="indnum" required>
+                    <label for="">Index Number</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" id="password" name="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forget">
+                    <a href="https://wa.me/233555442763?text=I%20forgot%20my%20password">Forgot Password?</a>
+                </div>
+                <button type="submit">Login</button>
+                <div class="register">
+                    <p>Don't have an account yet?<a href="/sign-up"> register</a></p>
+                </div>
+            </form>
+        </section>
+    </div>
+        <script>
+        const flashMsg = document.getElementById("flash-msg");
+        if (flashMsg) {
+            setTimeout(() => {
+                flashMsg.classList.add("hide");
+            }, 3000);
+        }
+        </script>
+    </body>

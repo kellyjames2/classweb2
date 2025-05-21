@@ -1,0 +1,122 @@
+body {
+    color: white;
+    background-color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to left, #252525, #28809a);
+}
+#menuToggle {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin: 10px;
+    text-align: center;
+    line-height: 0.4;
+    border: none;
+    background: transparent;
+
+}
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #252525;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    z-index: 1000;
+}
+.sidebar a {
+    color: #ffffff;
+    text-decoration: none;
+}
+.sidenav {
+    background: transparent;
+}
+.sidenav a {
+    line-height: 3;
+    margin-left: 30px;
+    width: 100%;
+    padding: 0;
+}
+.sidenav ul li {
+    margin: 0;
+    border: none;
+    display: flex;
+}
+.sidenav ul li a {
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+.sidenav ul li:nth-child(4n+1) {
+    background-color: #252525;
+    background: linear-gradient(to right, #252525, #28809a);
+    width: 100%;
+}
+.sidebar a:hover {
+    font-size: larger;
+    background: linear-gradient(to right, #252525, #28809a);}
+.close-btn {
+    position: absolute;
+    top: 20px;
+    font-size: 30px;
+    margin-left: 25px;
+}
+.buttonwelcome {
+    align-items: center;
+    font-size: 10px;
+    display: flex;
+    padding: 0;
+    margin-left: 10px;
+}
+.buttonwelcome h2 {
+    margin-left: 0;
+    font-weight: bold;
+}
+.buttonwelcome .intro {
+    align-items: center;
+    justify-content: center;
+}
+.courses {
+    color: white;
+}
+.courses li {
+    list-style-type: none;
+    background-color: #24252a;
+    margin-left: -40px;
+    padding-left: 20px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    display: flex;
+    border: 1px solid #ffffff;
+    background: linear-gradient(to right, #252525, #28809a);
+}
+.courses li a {
+    text-decoration: none;
+    color: white;
+    line-height: 3;
+    margin-right: 0;
+    width: 100%;
+}
+h5 {
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: whitesmoke;
+}
+footer {
+    background-color: #24252a;
+    display: flexbox;
+    width: 100%;
+    margin-top: 70px;
+    margin-left: -10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 40px;
+    padding-top: 20px;
+    color: #ffffff;
+    bottom: 0;
+    position: fixed;
+}

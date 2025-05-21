@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Writing Slides</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='courses.css')}}">
+</head>
+<body>
+<div class="buttonwelcome">
+    <button id="menuToggle">
+      &mdash; <br>
+      &mdash; <br>
+      &mdash;
+    </button>
+    <div class="intro">
+<h2>Diploma CSS Ebooks (2024/2025)</h2>
+</div>
+</div>
+<hr />
+    <div id="sidebar" class="sidebar">
+      <a href="#" class="close-btn" id="closeButton">&times;</a>
+      <div class="sidenav">
+        <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="/logout">Logout</a></li>
+      </ul>
+      </div>
+    </div>
+
+    <h5>Principles Of Programming</h5>
+    <ul class="files">
+        {% for topic in topics %}
+        <li class="fileslist">
+            <span>{{ topic }}</span>
+        <div class="actionbtn">
+            <a href="{{ url_for('download_file', filename=topic, pathoffolder='pop') }}"><button>Download</button></a>
+            <a href="{{ url_for('view_file', filename=topic, pathoffolder='pop') }}"><button>View</button></a>            
+        </div>
+        </li>
+        {% endfor %}
+    </ul>
+    <div class="footer">
+        <footer>&copy; All Rights Reserved</footer>
+    </div>
+    <script>
+        const sidebar = document.getElementById("sidebar");
+        const menuToggle = document.getElementById("menuToggle");
+        const closeBtn = document.getElementById("closeButton");
+        
+        menuToggle.addEventListener("click", () => {
+            sidebar.style.width = "250px";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            sidebar.style.width = "0";
+        });
+    </script>
+
+</body>
+</html>
